@@ -33,10 +33,12 @@ FEISHU_WEBHOOK_URL = os.environ.get(
 )
 
 # 监控列表
+# 重要: 中证红利 / 中证500 是中证指数公司发布的, 必须用 stock_zh_index_hist_csindex
+#      用 stock_zh_index_daily (sh/sz 前缀) 拿到的是交易所镜像, 数据可能滞后或不同
 WATCH_LIST = [
-    {'name': '中证红利', 'code': 'sh000922', 'ma': 120, 'source': 'csi',     'emoji': '🟢'},
+    {'name': '中证红利', 'code': '000922',  'ma': 120, 'source': 'csindex', 'emoji': '🟢'},
     {'name': '红利低波', 'code': 'H30269',   'ma': 120, 'source': 'csindex', 'emoji': '🔵'},
-    {'name': '中证500',  'code': 'sh000905', 'ma': 250, 'source': 'csi',     'emoji': '🟡'},
+    {'name': '中证500',  'code': '000905',  'ma': 250, 'source': 'csindex', 'emoji': '🟡'},
 ]
 
 
